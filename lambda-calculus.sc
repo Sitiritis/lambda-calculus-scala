@@ -55,3 +55,10 @@ Or[Int](new True[BooleanValue[Int]])(new True[Int])
 Or[Int](new True[BooleanValue[Int]])(new False[Int])
 Or[Int](new False[BooleanValue[Int]])(new False[Int])
 Or[Int](new False[BooleanValue[Int]])(new True[Int])
+
+// Here, the small_omega combination should be present, but
+// it is impossible to represent it with a strong typing system,
+// which is a case for Scala and Haskell. For more information see:
+// https://en.wikipedia.org/wiki/Simply_typed_lambda_calculus#General_observations
+// https://stackoverflow.com/questions/33546004/is-it-possible-to-define-omega-combinator-%CE%BBx-xx-in-modern-haskell
+// Hence, big_omega also cannot be implemented directly.
