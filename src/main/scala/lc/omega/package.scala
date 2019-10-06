@@ -20,9 +20,9 @@ package object omega {
   def infinite_graph_non_reducible_example(): SmallOmegaTyped =
     new SmallOmegaTyped()(new SmallOmegaTyped()(new SmallOmegaTyped()))
 
-  def infinite_graph_reducible_example_auxilary[T](x: => SmallOmegaTyped): True[T] =
+  def infinite_graph_reducible_example_auxiliary[T](x: => SmallOmegaTyped): True[T] =
     new True[T]
 
   def infinite_graph_reducible_example[T](): True[T] =
-    infinite_graph_reducible_example_auxilary(infinite_graph_non_reducible_example())
+    infinite_graph_reducible_example_auxiliary(infinite_graph_non_reducible_example())
 }

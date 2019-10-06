@@ -6,11 +6,11 @@ package object logic {
   }
 
   class True[T] extends BooleanValue[T] {
-    override def apply(x: T)(y: T): T = x;
+    override def apply(x: T)(y: T): T = x
   }
 
   class False[T] extends BooleanValue[T] {
-    override def apply(x: T)(y: T): T = y;
+    override def apply(x: T)(y: T): T = y
   }
 
   def If[T] =
