@@ -22,4 +22,7 @@ package object arithmetic {
 
   def mult_2[T](n: NaturalNumber[NaturalNumber[T]])(m: NaturalNumber[T]): NaturalNumber[T] =
     n(sum_1(m))(get_n_function[T](0))
+
+  def power[T](b: NaturalNumber[T])(e: NaturalNumber[NaturalNumber[T]]): NaturalNumber[T] =
+    e(mult_1(b))(get_n_function[T](1))
 }
