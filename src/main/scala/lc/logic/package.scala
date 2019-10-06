@@ -13,19 +13,15 @@ package object logic {
     override def apply(x: T)(y: T): T = y
   }
 
-  def If[T] =
-    (c: BooleanValue[T]) =>
-      (x: T) =>
-        (y: T) =>
-          c(x)(y)
+  def If[T](c: BooleanValue[T])(x: T)(y: T): T =
+    c(x)(y)
 
-  def And[T] =
-    (c1: BooleanValue[BooleanValue[T]]) =>
-      (c2: BooleanValue[T]) =>
+  def And[T](c1: BooleanValue[BooleanValue[T]])(c2: BooleanValue[T]): BooleanValue[T] =
         c1(c2)(new False[T])
 
-  def Or[T] =
-    (c1: BooleanValue[BooleanValue[T]]) =>
-      (c2: BooleanValue[T]) =>
-        c1(new True[T])(c2)
+  def Or[T](c1: BooleanValue[BooleanValue[T]])(c2: BooleanValue[T]): BooleanValue[T] =
+    c1(new True[T])(c2)
+
+  def is_zero[T](n: NaturalNumber[BooleanValue[T]]): BooleanValue[T] =
+    n((b: BooleanValue[T]) => new False[T]())(new True[T]())
 }

@@ -19,6 +19,12 @@ object Main extends App {
   println(sum_1[Int](six)(five)(_ + 1)(0))
   println(sum_2[Int](get_n_function[NaturalNumber[Int]](10))(five)(_ + 1)(0))
 
+  // Multiplication
+  println(mult_1(six)(five)(_ + 1)(0))
+  println(mult_2(get_n_function[NaturalNumber[Int]](10))(five)(_ + 1)(0))
+
+  // Power
+  println(power(five)(get_n_function[NaturalNumber[Int]](3))(_ + 1)(0))
 
   // Logic
   import lc.logic._
@@ -38,6 +44,10 @@ object Main extends App {
   println(Or[Int](new False[BooleanValue[Int]])(new True[Int]))
   println(Or[Int](new True[BooleanValue[Int]])(new False[Int]))
   println(Or[Int](new True[BooleanValue[Int]])(new True[Int]))
+
+  // isZero example
+  println(is_zero(get_n_function[BooleanValue[Int]](10)))
+  println(is_zero(get_n_function[BooleanValue[Int]](0)))
 
 
   // Omega combinators
