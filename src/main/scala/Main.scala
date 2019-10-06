@@ -49,7 +49,7 @@ object Main extends App {
   }
   catch {
     case _: StackOverflowError => println("Stack overflow has happened")
-    case _ => println("Unknown error has happened")
+    case _: Throwable => println("Unknown error has happened")
   }
 
   // Does not terminate, so the call will result in a stack overflow
@@ -58,7 +58,7 @@ object Main extends App {
   }
   catch {
     case _: StackOverflowError => println("Stack overflow has happened")
-    case _ => println("Unknown error has happened")
+    case _: Throwable => println("Unknown error has happened")
   }
 
   // Terminates, since the expression is reducible; though the reduction graph is infinite
